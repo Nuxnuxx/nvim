@@ -121,6 +121,7 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
+inoremap <Tab> <C-v><Tab>
 
 " fugitive setup
 nmap <leader>gj :diffget //3<CR>
