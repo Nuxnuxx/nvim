@@ -144,7 +144,6 @@ nnoremap <leader>te :call OpenTerminal()<CR>
 function Mouse()
 	set mouse=a
 endfunction
-
 function Unmouse()
 	set mouse=
 endfunction
