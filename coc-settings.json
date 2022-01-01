@@ -1,0 +1,9 @@
+{
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+	"omnisharp.version": "v1.37.3",
+	"omnisharp.trace.server": "information",
+	"omnisharp.debug.server": true,
+	"codeLens.enable": true,
+	"java.referencesCodeLens.enabled": true,
+	"java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+}
