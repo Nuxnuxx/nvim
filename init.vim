@@ -16,7 +16,6 @@
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
 
-" TEST
 " Call of all plugin 
 call plug#begin()
 
