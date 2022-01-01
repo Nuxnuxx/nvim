@@ -140,10 +140,16 @@ endfunction
 tnoremap <Esc><Esc> <C-\><C-n>
 nnoremap <leader>te :call OpenTerminal()<CR>
 
+" To make mouse usable or not
 function Mouse()
 	set mouse=a
 endfunction
+
+function Unmouse()
+	set mouse=
+endfunction
 noremap <leader>mo :call Mouse()<CR>
+noremap <leader>om :call Unmouse()<CR>
 
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
