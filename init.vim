@@ -148,8 +148,8 @@ endfunction
 function Unmouse()
 	set mouse=
 endfunction
-noremap <leader>mo :call Mouse()<CR>
-noremap <leader>om :call Unmouse()<CR>
+noremap <silent> <leader>mo :call Mouse()<CR>
+noremap <silent> <leader>om :call Unmouse()<CR>
 
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
