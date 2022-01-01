@@ -145,8 +145,10 @@ nnoremap <leader>te :call OpenTerminal()<CR>
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
 " Compile in c
 noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 " Compile in c++
-noremap <silent> <leader>C :AsyncRun g++  -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 " Compile in c#
 noremap <silent> <leader>m :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
 " Compile in java
