@@ -20,7 +20,7 @@
 " Call of all plugin 
 call plug#begin()
 
-Plug 'http://github.com/tpope/vim-surround' " Use cs' to change the '' to  another thing
+Plug 'http://github.com/tpope/vim-surround' " Use cs' to change the '' to  another thing like {}
 Plug 'https://github.com/justinmk/vim-syntax-extra' " Extra syntax color
 Plug 'https://github.com/preservim/nerdtree' " NerdTree / file browser like IDE
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
@@ -43,6 +43,7 @@ Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one sho
 Plug 'tpope/vim-fugitive' " Git update in neovim 
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
+Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 
 " Plugin unuse
 Plug 'folke/trouble.nvim' " Don't use today
@@ -121,7 +122,7 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-inoremap <Tab> <C-v><Tab>
+"inoremap <Tab> <C-v><Tab>
 
 " fugitive setup
 nmap <leader>gj :diffget //3<CR>
