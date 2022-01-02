@@ -102,8 +102,6 @@ nnoremap <C-f> :cp<CR>
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
 
 " To delete a pattern of word one by one
 nnoremap c* *``cgn
