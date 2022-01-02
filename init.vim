@@ -71,9 +71,13 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_y = airline#section#create_right(['🐧  ','ffenc'])
-let g:airline_left_sep = "\uE0B4"
-let g:airline_right_sep = "\uE0B6"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+
+" To enable rounded corner
+" let g:airline_left_sep = "\uE0B4"
+" let g:airline_right_sep = "\uE0B6"
 
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
