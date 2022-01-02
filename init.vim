@@ -70,7 +70,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_section_y = airline#section#create_right(['🐧  ','ffenc'])
+let g:airline_section_y = airline#section#create_right(['  ','ffenc'])
 let g:airline_left_sep = ""
 let g:airline_right_sep = ""
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
@@ -78,6 +78,8 @@ let g:airline#extensions#tabline#left_sep = ""
 let g:airline#extensions#tabline#left_alt_sep = ""
 let g:airline#extensions#tabline#right_sep = ""
 let g:airline#extensions#tabline#right_alt_sep = ""
+let airline#extensions#coc#error_symbol = 'ﲍ'
+let airline#extensions#coc#warning_symbol = ''
 
 " To enable rounded corner
 " let g:airline_left_sep = "\uE0B4"
