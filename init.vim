@@ -74,10 +74,18 @@ let g:airline_section_y = airline#section#create_right(['🐧  ','ffenc'])
 let g:airline_left_sep = ""
 let g:airline_right_sep = ""
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+let g:airline#extensions#tabline#left_sep = ""
+let g:airline#extensions#tabline#left_alt_sep = ""
+let g:airline#extensions#tabline#right_sep = ""
+let g:airline#extensions#tabline#right_alt_sep = ""
 
 " To enable rounded corner
 " let g:airline_left_sep = "\uE0B4"
 " let g:airline_right_sep = "\uE0B6"
+
+" Fuzzy finder setup
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
