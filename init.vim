@@ -42,6 +42,7 @@ Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
+Plug 'preservim/tagbar'
 
 " Plugin unuse
 Plug 'folke/trouble.nvim' " Don't use today
@@ -110,6 +111,9 @@ nnoremap <C-h> :winc h<CR>
 nnoremap <C-j> :winc j<CR>
 nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
+
+" To enable tagbar
+nnoremap <leader>o :TagbarToggle<CR>
 
 " To make basic move more clean
 nnoremap Y y$
