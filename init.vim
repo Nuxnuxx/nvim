@@ -85,10 +85,6 @@ let airline#extensions#coc#warning_symbol = ''
 " let g:airline_left_sep = "\uE0B4"
 " let g:airline_right_sep = "\uE0B6"
 
-" Fuzzy finder setup
-let g:fzf_preview_window = 'right:50%'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
-
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 :set completeopt-=preview " For No Previews
