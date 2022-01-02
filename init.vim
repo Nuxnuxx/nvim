@@ -42,7 +42,7 @@ Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
-Plug 'preservim/tagbar'
+Plug 'preservim/tagbar' " Menu for function,const,variable
 
 " Plugin unuse
 Plug 'folke/trouble.nvim' " Don't use today
