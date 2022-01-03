@@ -14,7 +14,6 @@
 
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
-
 " Call of all plugin 
 call plug#begin()
 
@@ -43,6 +42,7 @@ Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 Plug 'preservim/tagbar' " Menu for function,const,variable
+Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 
 " Plugin unuse
 Plug 'folke/trouble.nvim' " Don't use today
@@ -50,6 +50,9 @@ Plug 'puremourning/vimspector' " Don't use today
 
 :set encoding=UTF-8
 call plug#end()
+
+" To get acces to this file
+nnoremap <leader>co :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
 :colorscheme gruvbox
@@ -74,16 +77,16 @@ let g:airline_section_y = airline#section#create_right(['  ','ffenc'])
 let g:airline_left_sep = ""
 let g:airline_right_sep = ""
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
-let g:airline#extensions#tabline#left_sep = ""
-let g:airline#extensions#tabline#left_alt_sep = ""
-let g:airline#extensions#tabline#right_sep = ""
-let g:airline#extensions#tabline#right_alt_sep = ""
+" let g:airline#extensions#tabline#left_sep = ""
+" let g:airline#extensions#tabline#left_alt_sep = ""
+" let g:airline#extensions#tabline#right_sep = ""
+" let g:airline#extensions#tabline#right_alt_sep = ""
 let airline#extensions#coc#error_symbol = 'ﲍ'
 let airline#extensions#coc#warning_symbol = ''
 
 " To enable rounded corner
-" let g:airline_left_sep = "\uE0B4"
-" let g:airline_right_sep = "\uE0B6"
+let g:airline_left_sep = "\uE0B4"
+let g:airline_right_sep = "\uE0B6"
 
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
@@ -136,6 +139,7 @@ inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 "inoremap <Tab> <C-v><Tab>
 
+
 " fugitive setup
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gk :diffget //2<CR>
@@ -169,7 +173,7 @@ nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
 " Compile in c
 noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 " Compile in c without warning
-noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm <cr>
 " Compile in c++
 noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 " Compile in c++ without warning
@@ -201,4 +205,3 @@ vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
-
