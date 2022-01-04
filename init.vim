@@ -8,7 +8,7 @@
 :set softtabstop=4 " Tab 4 spaces
 :set showtabline=0 
 :set relativenumber " Make number relative to jump faster where i want
-:set incsearch " when u / = search for something it inc the letter by letter
+:set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch 
 
