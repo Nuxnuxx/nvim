@@ -92,6 +92,7 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 
 " Telescope and harpoon setup
 nnoremap <leader>p :Telescope find_files<CR>
+nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>h :Telescope live_grep<CR>
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>
