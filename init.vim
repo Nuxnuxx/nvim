@@ -6,11 +6,11 @@
 :set smarttab " Make tab when needed
 :set noswapfile " Get ride of shitty swap files
 :set softtabstop=4 " Tab 4 spaces
-:set showtabline=0 
+:set showtabline=0  " Dont know why but it is here 
 :set relativenumber " Make number relative to jump faster where i want
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
-:set nohlsearch 
+:set nohlsearch  " Disable highlight when finish searching
 
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
