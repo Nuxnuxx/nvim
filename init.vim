@@ -1,16 +1,16 @@
 " set without plugin
-:set number
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set noswapfile
-:set softtabstop=4
-:set showtabline=0
-:set relativenumber
-:set incsearch
-:set cursorline
-:set nohlsearch
+:set number " Show number of line
+:set autoindent " Auto indent when needed like in c files
+:set tabstop=4 " make tab stop at 4 spaces
+:set shiftwidth=4 " The same
+:set smarttab " Make tab when needed
+:set noswapfile " Get ride of shitty swap files
+:set softtabstop=4 " Tab 4 spaces
+:set showtabline=0 
+:set relativenumber " Make number relative to jump faster where i want
+:set incsearch " when u / = search for something it inc the letter by letter
+:set cursorline " Show cursor line to be aware of where is the cursor
+:set nohlsearch 
 
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
@@ -55,41 +55,39 @@ call plug#end()
 nnoremap <silent> <leader>co :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
-:colorscheme gruvbox
-highlight Normal ctermfg=white ctermbg=none
+:colorscheme gruvbox " The best colorscheme ever
+highlight Normal ctermfg=white ctermbg=none 
 let g:badwolf_darkgutter = 0
-let g:badwolf_tabline = 1
-let g:gruvbox_contrast_dark = 'hard'
-let g:airline_theme='base16_gruvbox_dark_hard'
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
+let g:badwolf_tabline = 1 " show tabline
+let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
+let g:airline_theme='base16_gruvbox_dark_hard' " Make status bar and buffer bar in theme with gruvbox
+let g:NERDTreeDirArrowExpandable="+" " When file not open in nerd tree show this icon
+let g:NERDTreeDirArrowCollapsible="~" " When file open in nerd tree show this icon
 
 " nerd tree setup
-nnoremap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeFocus<CR> 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Airline setup
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_section_y = airline#section#create_right(['  ','ffenc'])
-let g:airline_left_sep = ""
-let g:airline_right_sep = ""
-let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
+let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar 
+let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
+let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
+let g:airline_section_y = airline#section#create_right(['  ','ffenc']) " This is tux
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
 " let g:airline#extensions#tabline#left_sep = ""
 " let g:airline#extensions#tabline#left_alt_sep = ""
 " let g:airline#extensions#tabline#right_sep = ""
 " let g:airline#extensions#tabline#right_alt_sep = ""
-let airline#extensions#coc#error_symbol = 'ﲍ'
-let airline#extensions#coc#warning_symbol = ''
+let airline#extensions#coc#error_symbol = 'ﲍ' " Show this icon for error in status bar
+let airline#extensions#coc#warning_symbol = '' " Show this icon for warning in status bar
 
 " To enable rounded corner
 let g:airline_left_sep = "\uE0B4"
 let g:airline_right_sep = "\uE0B6"
 
 " Coc setup
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>"" 
 :set completeopt-=preview " For No Previews
 
 " Telescope and harpoon setup
@@ -127,7 +125,7 @@ nnoremap <C-l> :winc l<CR>
 nnoremap <leader>o :TagbarToggle<CR>
 
 " To make basic move more clean
-nnoremap Y y$
+nnoremap Y y$ 
 nnoremap n nzzzn
 nnoremap N Nzzzv
 nnoremap J mzJ`z
@@ -135,7 +133,6 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-"inoremap <Tab> <C-v><Tab>
 
 
 " fugitive setup
