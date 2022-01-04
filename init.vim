@@ -106,6 +106,10 @@ nnoremap <C-f> :cp<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>l :bn<CR>
 
+" To navigate throught tab
+nnoremap <leader>j :tabprevious<CR>
+nnoremap <leader>k :tabnext<CR>
+
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
