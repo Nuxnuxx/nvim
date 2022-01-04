@@ -174,7 +174,7 @@ noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_F
 " Compile in c++ without warning
 noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 " Compile in c#
-noremap <silent> <leader>m :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
+noremap <silent> <leader># :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
 " Compile in java
 noremap <silent> <leader>j :AsyncRun javac $(VIM_FILEPATH)<cr>
 
