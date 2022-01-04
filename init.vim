@@ -102,6 +102,10 @@ nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <C-c> :cn<CR>
 nnoremap <C-f> :cp<CR>
 
+" To navigate throught buffers
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -202,3 +206,4 @@ vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
+
