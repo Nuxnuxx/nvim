@@ -42,12 +42,12 @@ Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
-Plug 'preservim/tagbar' " Menu for function,const,variable
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 
 " Plugin unuse
-Plug 'folke/trouble.nvim' " Don't use today
-Plug 'puremourning/vimspector' " Don't use today
+"  Plug 'preservim/tagbar' " Menu for function,const,variable
+"  Plug 'folke/trouble.nvim' " Don't use today
+"  Plug 'puremourning/vimspector' " Don't use today
 
 :set encoding=UTF-8
 call plug#end()
@@ -74,7 +74,6 @@ let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
 let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar 
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
 let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
-let g:airline_section_y = airline#section#create_right(['  ','ffenc']) " This is tux
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
 " let g:airline#extensions#tabline#left_sep = ""
 " let g:airline#extensions#tabline#left_alt_sep = ""
