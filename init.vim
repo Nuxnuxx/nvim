@@ -153,7 +153,7 @@ function! OpenTerminal()
 	startinsert
 endfunction
 tnoremap <Esc><Esc> <C-\><C-n>
-nnoremap <leader>te :call OpenTerminal()<CR>
+nnoremap <leader>ko :call OpenTerminal()<CR>
 
 " To make mouse usable or not
 function Mouse()
