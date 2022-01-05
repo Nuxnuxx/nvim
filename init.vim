@@ -171,7 +171,7 @@ function Unmouse()
 	set mouse=
 endfunction
 noremap <silent> <leader>mo :call Mouse()<CR>
-noremap <silent> <leader>om :call Unmouse()<CR>
+noremap <silent> <leader>se :call Unmouse()<CR>
 
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
@@ -193,6 +193,10 @@ let g:asyncrun_open = 6
 
 " To hide the shit 
 au VimEnter * silent exec "!kill -s SIGWINCH $PPID"
+
+
+map L $
+map H ^
 
 " Just to avoid arrow keys bad habits
 cnoremap <Left> <Nop>
