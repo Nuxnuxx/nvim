@@ -1,7 +1,10 @@
 # A simple nvim settings that make vim usable for c,c++,java,c# and python
 
 ## Raw settings
-- space rc to toggle config files
+to toggle config files
+```
+space+rc
+```
 
 - Tab to toggle auto complete
 
