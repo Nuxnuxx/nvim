@@ -53,7 +53,7 @@ Plug 'puremourning/vimspector' " Don't use today
 call plug#end()
 
 " To get acces to this file
-nnoremap <silent> <leader>co :e $MYVIMRC<cr>
+nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
 :colorscheme gruvbox " The best colorscheme ever
