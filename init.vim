@@ -194,9 +194,18 @@ let g:asyncrun_open = 6
 " To hide the shit 
 au VimEnter * silent exec "!kill -s SIGWINCH $PPID"
 
-
+" Remap start and end of line which are show to end and start of the current line
 map L $
 map H ^
+
+" Make p (yank) replace a whole function
+nnoremap paw "_dawP
+nnoremap pi{ "_di{P
+nnoremap pi} "_di}P
+nnoremap pi( "_di(P
+nnoremap pi) "_di)P
+nnoremap pi' "_di'P
+nnoremap pi" "_di"P
 
 " Just to avoid arrow keys bad habits
 cnoremap <Left> <Nop>
