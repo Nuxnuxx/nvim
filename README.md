@@ -5,7 +5,7 @@ to toggle config files
 ```
 space+rc
 ```
-
+- test
 - Tab to toggle auto complete
 
 ## Files navigation
