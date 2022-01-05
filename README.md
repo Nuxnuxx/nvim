@@ -1,4 +1,4 @@
-#A simple nvim settings that make vim usable for c,c++,java,c# and python
+# A simple nvim settings that make vim usable for c,c++,java,c# and python
 
 - space rc to toggle config files
 
