@@ -117,7 +117,6 @@ nnoremap c# #``cgN
 nnoremap :ze :w !ctags -R Desktop/Programme<CR><CR>
 
 " To maximize windows and demaximize
-nnoremap <C-y> :MaximizerToggle<CR>
 nnoremap <C-d> :MaximizerToggle!<CR>
 
 " To simplify switching windows
@@ -126,8 +125,6 @@ nnoremap <C-j> :winc j<CR>
 nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
 
-" To enable tagbar
-nnoremap <leader>o :TagbarToggle<CR>
 
 " To make basic move more clean
 nnoremap Y y$ 
@@ -196,8 +193,10 @@ map H ^
 " Make p (yank) replace a whole function
 nnoremap paw "_dawP
 nnoremap pi{ "_di{P
+nnoremap piB "_di{P
 nnoremap pi} "_di}P
 nnoremap pi( "_di(P
+nnoremap pib "_di(P
 nnoremap pi) "_di)P
 nnoremap pi' "_di'P
 nnoremap pi" "_di"P
