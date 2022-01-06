@@ -43,7 +43,7 @@ Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
-Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 
 " Plugin unuse
 "  Plug 'preservim/tagbar' " Menu for function,const,variable
