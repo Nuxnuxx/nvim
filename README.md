@@ -27,9 +27,9 @@
 - **space+se** to untoggle mouse
 
 ## Useful shortcut
-- **space+te** open a fast terminal to execute some command
+- **space+ko** open a fast terminal to execute some command
 
-- **Control+d** toggle the current window 
+- **Control+d** maximize the current window 
 
 - **Control+t** toggle nerd tree
 - **Control+n** focus it
