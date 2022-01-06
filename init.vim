@@ -45,7 +45,6 @@ Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to commen
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 
-
 " Plugin unuse
 "  Plug 'preservim/tagbar' " Menu for function,const,variable
 "  Plug 'folke/trouble.nvim' " Don't use today
@@ -89,16 +88,16 @@ let g:airline_left_sep = "\uE0B4"
 let g:airline_right_sep = "\uE0B6"
 
 " Vimspector setup (debug)
-nnoremap <leader>da :call vimspector#Launch()<CR>
-nnoremap <leader>dx :call vimspector#Reset()<CR>
-nnoremap <S-k> :call vimspector#StepOut()
-nnoremap <S-l> :call vimspector#StepInto()
-nnoremap <S-j> :call vimspector#StepOver()
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+nnoremap <leader>dk :call vimspector#StepOut()<CR>
+nnoremap <leader>dl :call vimspector#StepInto()<CR>
+nnoremap <leader>dj :call vimspector#StepOver()<CR>
 nnoremap <leader>d_ :call vimspector#Restart()<CR>
 nnoremap <leader>dn :call vimspector#Continue()<CR>
 nnoremap <leader>drc :call vimspector#RunToCursor()<CR>
 nnoremap <leader>dh :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <leader>de :call vimspector#ToggleConditionalBreakpoint()<CR>
+nnoremap <leader>dx :call vimspector#ToggleConditionalBreakpoint()<CR>
 
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>"" 
