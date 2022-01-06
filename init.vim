@@ -139,9 +139,6 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
-
-" Vimspector setup
-
 " fugitive setup
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gk :diffget //2<CR>
