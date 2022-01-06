@@ -117,7 +117,7 @@ nnoremap c* *``cgn
 nnoremap c# #``cgN
 
 " To refresh tags files in programme for c 
-nnoremap :ze :w !ctags -R Desktop/Programme<CR><CR>
+" nnoremap :ze :w !ctags -R Desktop/Programme<CR><CR>
 
 " To maximize windows and demaximize
 nnoremap <C-d> :MaximizerToggle!<CR>
