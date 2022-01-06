@@ -63,8 +63,8 @@ let g:badwolf_darkgutter = 0
 let g:badwolf_tabline = 1 " show tabline
 let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
 let g:airline_theme='base16_gruvbox_dark_hard' " Make status bar and buffer bar in theme with gruvbox
-let g:NERDTreeDirArrowExpandable="+" " When file not open in nerd tree show this icon
-let g:NERDTreeDirArrowCollapsible="~" " When file open in nerd tree show this icon
+let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show this icon
+let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this icon
 
 " nerd tree setup
 nnoremap <C-n> :NERDTreeFocus<CR> 
