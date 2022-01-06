@@ -8,6 +8,7 @@
 - **Control + vim motion** = windows navigation and tmux navigation
 
 - **Space + vim motion** = buffers navigation
+- **Space + x** = delete current buffers
 
 ## Compilation
 - compile with **space + c** (for c) and wc for no warning + math library 

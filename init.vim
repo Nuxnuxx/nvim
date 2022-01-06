@@ -94,7 +94,7 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 " Telescope and harpoon setup
 nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
-nnoremap <leader>h :Telescope live_grep<CR>
+nnoremap <leader>H :Telescope live_grep<CR>
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 
@@ -104,6 +104,7 @@ nnoremap <C-f> :cp<CR>
 
 " To navigate throught buffers
 nnoremap <leader>h :bp<CR>
+nnoremap <leader>x :bd<CR>
 nnoremap <leader>l :bn<CR>
 
 " To deplace line in visual / insert / normal mode
