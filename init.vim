@@ -43,6 +43,7 @@ Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
+Plug 'puremourning/vimspector'
 
 " Plugin unuse
 "  Plug 'preservim/tagbar' " Menu for function,const,variable
@@ -138,6 +139,8 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+
+" Vimspector setup
 
 " fugitive setup
 nmap <leader>gj :diffget //3<CR>
