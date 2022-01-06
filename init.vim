@@ -45,10 +45,10 @@ Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to commen
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 
+
 " Plugin unuse
 "  Plug 'preservim/tagbar' " Menu for function,const,variable
 "  Plug 'folke/trouble.nvim' " Don't use today
-"  Plug 'puremourning/vimspector' " Don't use today
 
 :set encoding=UTF-8
 call plug#end()
@@ -87,6 +87,18 @@ let airline#extensions#coc#warning_symbol = '' " Show this icon for warning i
 " To enable rounded corner
 let g:airline_left_sep = "\uE0B4"
 let g:airline_right_sep = "\uE0B6"
+
+" Vimspector setup (debug)
+nnoremap <leader>da :call vimspector#Launch()<CR>
+nnoremap <leader>dx :call vimspector#Reset()<CR>
+nnoremap <S-k> :call vimspector#StepOut()
+nnoremap <S-l> :call vimspector#StepInto()
+nnoremap <S-j> :call vimspector#StepOver()
+nnoremap <leader>d_ :call vimspector#Restart()<CR>
+nnoremap <leader>dn :call vimspector#Continue()<CR>
+nnoremap <leader>drc :call vimspector#RunToCursor()<CR>
+nnoremap <leader>dh :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>de :call vimspector#ToggleConditionalBreakpoint()<CR>
 
 " Coc setup
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>"" 
@@ -127,7 +139,6 @@ nnoremap <C-h> :winc h<CR>
 nnoremap <C-j> :winc j<CR>
 nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
-
 
 " To make basic move more clean
 nnoremap Y y$ 
