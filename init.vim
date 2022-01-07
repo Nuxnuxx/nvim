@@ -66,7 +66,7 @@ let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show th
 let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this icon
 
 " nerd tree setup
-nnoremap <C-m> :NERDTreeFind<CR> 
+nnoremap <C-e> :NERDTreeFind<CR> 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Airline setup
