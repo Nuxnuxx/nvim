@@ -184,6 +184,7 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <leader><F5>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F5> <Plug>VimspectorLaunch$/;"	m
 <leader><F8>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F8> <Plug>VimspectorRunToCursor$/;"	m
 <leader><F9>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint$/;"	m
+<leader><Up>	init.vim	/^nnoremap <leader><Up> :Telescope help_tags<CR>$/;"	m
 <leader>C	init.vim	/^noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" <cr>$/;"	m
 <leader>H	init.vim	/^nnoremap <leader>H :Telescope live_grep<CR>$/;"	m
 <leader>a	init.vim	/^nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>$/;"	m
