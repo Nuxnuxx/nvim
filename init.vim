@@ -1,3 +1,5 @@
+"------------------------------------  GENERAL SETTINGS  ---------------------------------"
+
 " In case its not auto-enable
 set encoding=UTF-8
 
@@ -18,7 +20,8 @@ set encoding=UTF-8
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
 
-" Call of all plugin 
+"------------------------------------ PLUGIN  ---------------------------------------------"
+
 call plug#begin()
 
 Plug 'http://github.com/tpope/vim-surround' " Use cs' to change the '' to  another thing like {}
@@ -53,6 +56,8 @@ Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 "  Plug 'folke/trouble.nvim' " Don't use today
 
 call plug#end()
+
+"---------------------------------  MAPPING AND SETTINGS FOR PLUGIN  --------------------"
 
 " To get acces to this file
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
