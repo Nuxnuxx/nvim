@@ -58,7 +58,7 @@ call plug#end()
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
-:colorscheme gruvbox  " The best colorscheme ever
+:colorscheme gruvbox  " The best colorscheme ever and make main color = white
 highlight Normal ctermfg=white ctermbg=none 
 let g:badwolf_darkgutter = 0
 let g:badwolf_tabline = 1 " show tabline
