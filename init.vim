@@ -1,3 +1,6 @@
+" In case its not auto-enable
+set encoding=UTF-8
+
 " set without plugin
 :set number " Show number of line
 :set autoindent " Auto indent when needed like in c files
@@ -31,12 +34,10 @@ Plug 'skywind3000/asyncrun.vim' " to start quickfix
 Plug 'https://github.com/vim-airline/vim-airline' " To magnify the vim status bar
 Plug 'vim-airline/vim-airline-themes' " To magnify even more the status bar
 Plug 'othree/yajs.vim' " Color and auto complete react...
-Plug 'mxw/vim-jsx'
 Plug 'nvim-lua/plenary.nvim' " For making telescope and harpoon working
 Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder eke file finder really fast
 Plug 'ThePrimeagen/harpoon' " To have a better view of tabs and save file to temp
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " To make telescope and live grep work
-Plug 'kyazdani42/nvim-web-devicons' " More ICONS
 Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one shortcut
 Plug 'tpope/vim-fugitive' " Git update in neovim 
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
@@ -45,19 +46,19 @@ Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to commen
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 Plug 'https://github.com/ludovicchabant/vim-gutentags' " Automatically update tags files
+Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 
 " Plugin unuse
 "  Plug 'preservim/tagbar' " Menu for function,const,variable
 "  Plug 'folke/trouble.nvim' " Don't use today
 
-:set encoding=UTF-8
 call plug#end()
 
 " To get acces to this file
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
-:colorscheme gruvbox " The best colorscheme ever
+:colorscheme gruvbox  " The best colorscheme ever
 highlight Normal ctermfg=white ctermbg=none 
 let g:badwolf_darkgutter = 0
 let g:badwolf_tabline = 1 " show tabline
@@ -85,8 +86,8 @@ let airline#extensions#coc#error_symbol = 'ﲍ' " Show this icon for error in st
 let airline#extensions#coc#warning_symbol = '' " Show this icon for warning in status bar
 
 " To enable rounded corner
-let g:airline_left_sep = "\uE0B4"
-let g:airline_right_sep = "\uE0B6"
+let g:airline_left_sep = ""
+let g:airline_right_sep = ""
 
 " Vimspector setup (debug)
 nnoremap <leader>dd :call vimspector#Launch()<CR>
@@ -128,9 +129,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " To delete a pattern of word one by one
 nnoremap c* *``cgn
 nnoremap c# #``cgN
-
-" To refresh tags files in programme for c 
-" nnoremap :ze :w !ctags -R Desktop/Programme<CR><CR>
 
 " To maximize windows and demaximize
 nnoremap <C-d> :MaximizerToggle!<CR>
