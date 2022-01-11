@@ -16,6 +16,7 @@ set encoding=UTF-8
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch  " Disable highlight when finish searching
+autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
@@ -50,10 +51,6 @@ Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of 
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 Plug 'https://github.com/ludovicchabant/vim-gutentags' " Automatically update tags files
 Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
-
-" Plugin unuse
-"  Plug 'preservim/tagbar' " Menu for function,const,variable
-"  Plug 'folke/trouble.nvim' " Don't use today
 
 call plug#end()
 
@@ -234,3 +231,6 @@ vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
+
+" Disable Ex mode
+nnoremap Q <Nop>
