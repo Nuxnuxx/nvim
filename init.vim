@@ -1,9 +1,8 @@
 "------------------------------------  GENERAL SETTINGS  ---------------------------------"
 
-" In case its not auto-enable
-set encoding=UTF-8
-
 " set without plugin
+set encoding=UTF-8 " In case its not auto-enable
+filetype plugin on " Enable plugin on file type
 :set number " Show number of line
 :set autoindent " Auto indent when needed like in c files
 :set tabstop=4 " make tab stop at 4 spaces
@@ -11,7 +10,7 @@ set encoding=UTF-8
 :set smarttab " Make tab when needed
 :set noswapfile " Get ride of shitty swap files
 :set softtabstop=4 " Tab 4 spaces
-:set showtabline=0  " Dont know why but it is here 
+:set showtabline=0  " Dont know why but it is here
 :set relativenumber " Make number relative to jump faster where i want
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
@@ -43,7 +42,7 @@ Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder eke file finder really fast
 Plug 'ThePrimeagen/harpoon' " To have a better view of tabs and save file to temp
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " To make telescope and live grep work
 Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one shortcut
-Plug 'tpope/vim-fugitive' " Git update in neovim 
+Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'morhetz/gruvbox' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
@@ -61,7 +60,7 @@ nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
 :colorscheme gruvbox  " The best colorscheme ever and make main color = white
-highlight Normal ctermfg=white ctermbg=none 
+highlight Normal ctermfg=white ctermbg=none
 let g:badwolf_darkgutter = 0
 let g:badwolf_tabline = 1 " show tabline
 let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
@@ -70,12 +69,12 @@ let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show th
 let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this icon
 
 " nerd tree setup
-nnoremap <C-e> :NERDTreeFind<CR> 
+nnoremap <C-e> :NERDTreeFind<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Airline setup
 let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
-let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar 
+let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
 let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
@@ -104,7 +103,7 @@ nnoremap <leader>dh :call vimspector#ToggleBreakpoint()<CR>
 nnoremap <leader>dx :call vimspector#ToggleConditionalBreakpoint()<CR>
 
 " Coc setup
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>"" 
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 :set completeopt-=preview " For No Previews
 
 " Telescope and harpoon setup
@@ -142,7 +141,7 @@ nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
 
 " To make basic move more clean
-nnoremap Y y$ 
+nnoremap Y y$
 nnoremap n nzzzn
 nnoremap N Nzzzv
 nnoremap J mzJ`z
@@ -156,9 +155,9 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gk :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
-" Terminal command 
+" Terminal command
 function! OpenTerminal()
-	vsplit 
+	vsplit
 	vertical resize 60
 	winc l
 	term
@@ -197,7 +196,7 @@ noremap <silent> <leader>j :AsyncRun javac $(VIM_FILEPATH)<cr>
 " set the quickfix window 6 lines height.
 let g:asyncrun_open = 6
 
-" To hide the shit 
+" To hide the shit
 au VimEnter * silent exec "!kill -s SIGWINCH $PPID"
 
 " Remap start and end of line which are show to end and start of the current line
