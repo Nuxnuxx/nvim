@@ -61,8 +61,6 @@ nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 " For style / color / status bar / background / Nerd tree beauty
 :colorscheme gruvbox  " The best colorscheme ever and make main color = white
 highlight Normal ctermfg=white ctermbg=none
-let g:badwolf_darkgutter = 0
-let g:badwolf_tabline = 1 " show tabline
 let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
 let g:airline_theme='base16_gruvbox_dark_hard' " Make status bar and buffer bar in theme with gruvbox
 let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show this icon
@@ -133,9 +131,7 @@ nnoremap c# #``cgN
 
 " To maximize windows and demaximize
 nnoremap <C-d> :MaximizerToggle!<CR>
-
-" To simplify switching windows
-nnoremap <C-h> :winc h<CR>
+" To simplify switching windows nnoremap <C-h> :winc h<CR>
 nnoremap <C-j> :winc j<CR>
 nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
@@ -192,7 +188,6 @@ noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDI
 noremap <silent> <leader># :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
 " Compile in java
 noremap <silent> <leader>j :AsyncRun javac $(VIM_FILEPATH)<cr>
-
 " set the quickfix window 6 lines height.
 let g:asyncrun_open = 6
 
