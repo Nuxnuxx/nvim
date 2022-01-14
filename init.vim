@@ -1,4 +1,4 @@
-"------------------------------------  GENERAL SETTINGS  ---------------------------------"
+"-------------------------  GENERAL SETTINGS  ----------------------------"
 
 " set without plugin
 set encoding=UTF-8 " In case its not auto-enable
@@ -23,7 +23,7 @@ autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
 
-"------------------------------------ PLUGIN  ---------------------------------------------"
+"----------------------------- PLUGIN  ------------------------------"
 
 call plug#begin()
 
@@ -56,7 +56,7 @@ Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 
 call plug#end()
 
-"---------------------------------  MAPPING AND SETTINGS FOR PLUGIN  --------------------"
+"-------------------------  MAPPING AND SETTINGS FOR PLUGIN  -----------------"
 
 " To get acces to this file
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
