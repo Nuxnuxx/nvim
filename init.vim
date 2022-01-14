@@ -15,6 +15,9 @@ filetype plugin on " Enable plugin on file type
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch  " Disable highlight when finish searching
+:set list
+:let &listchars = 'tab:  ,eol:¬'
+:set fillchars=vert:│
 autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 
 " Remap leader to space bar , '/' when no remap
@@ -25,7 +28,7 @@ autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 call plug#begin()
 
 Plug 'http://github.com/tpope/vim-surround' " Use cs' to change the '' to  another thing like {}
-Plug 'https://github.com/justinmk/vim-syntax-extra' " Extra syntax color
+Plug 'https://github.com/justinmk/vim-syntax-extra'
 Plug 'https://github.com/preservim/nerdtree' " NerdTree / file browser like IDE
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons for more beautiful style
@@ -44,7 +47,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " To make telescop
 Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one shortcut
 Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
-Plug 'morhetz/gruvbox' " The best colorscheme ever !
+Plug 'https://github.com/nanotech/jellybeans.vim' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
@@ -59,10 +62,10 @@ call plug#end()
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
 
 " For style / color / status bar / background / Nerd tree beauty
-:colorscheme gruvbox  " The best colorscheme ever and make main color = white
-highlight Normal ctermfg=white ctermbg=none
+let g:jellybeans_background_color_256='232'
+:colorscheme jellybeans  " The best colorscheme ever and make main color = white
 let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
-let g:airline_theme='base16_gruvbox_dark_hard' " Make status bar and buffer bar in theme with gruvbox
+let g:airline_theme='jellybeans' " Make status bar and buffer bar in theme with gruvbox
 let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show this icon
 let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this icon
 
@@ -107,7 +110,7 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 " Telescope and harpoon setup
 nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
-nnoremap <leader>H :Telescope live_grep<CR>
+nnoremap <leader><Down>:Telescope live_grep<CR>
 nnoremap <leader><Up> :Telescope help_tags<CR>
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>
@@ -118,8 +121,10 @@ nnoremap <C-f> :cp<CR>
 
 " To navigate throught buffers
 nnoremap <leader>h :bp<CR>
+nnoremap <leader>H :tabprevious<CR>
 nnoremap <leader>x :bd<CR>
 nnoremap <leader>l :bn<CR>
+nnoremap <leader>L :tabnext<CR>
 
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
@@ -177,13 +182,13 @@ noremap <silent> <leader>se :call Unmouse()<CR>
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
 " Compile in c
-noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address -static-libasan<cr>
 " Compile in c without warning
-noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm <cr>
+noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm  -fsanitize=address -static-libasan<cr>
 " Compile in c++
-noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>
 " Compile in c++ without warning
-noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>
 " Compile in c#
 noremap <silent> <leader># :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
 " Compile in java
