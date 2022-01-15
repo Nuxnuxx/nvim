@@ -6892,11 +6892,10 @@ g:airline_inactive_collapse	plugged/vim-airline/t/airline.vim	/^    let g:airlin
 g:airline_inactive_collapse	plugged/vim-airline/t/airline.vim	/^    let g:airline_inactive_collapse = 1$/;"	v
 g:airline_inactive_funcrefs	plugged/vim-airline/autoload/airline.vim	/^let g:airline_inactive_funcrefs = get(g:, 'airline_inactive_statusline_funcrefs', [])$/;"	v
 g:airline_left_sep	init.vim	/^let g:airline_left_sep = ""$/;"	v
-g:airline_powerline_fonts	init.vim	/^let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar$/;"	v
 g:airline_right_sep	init.vim	/^let g:airline_right_sep = ""$/;"	v
 g:airline_section_	plugged/vim-airline/t/init.vim	/^      let g:airline_section_{s} = s$/;"	v
 g:airline_section_a	plugged/vim-airline/t/airline.vim	/^    let g:airline_section_a = airline#section#create(['mode', 'mode'])$/;"	v
-g:airline_section_y	init.vim	/^let g:airline_section_y = '🦕' " Disable encoding format in status bar$/;"	v
+g:airline_section_y	init.vim	/^let g:airline_section_y = '' " Disable encoding format in status bar$/;"	v
 g:airline_section_z	init.vim	/^let g:airline_section_z = airline#section#create(["\\uE0A1" . '%{line(".")}' . "\\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter$/;"	v
 g:airline_section_z	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_section_z = airline#section#create(['%1p%% — ',$/;"	v
 g:airline_statusline_funcrefs	plugged/vim-airline/autoload/airline.vim	/^let g:airline_statusline_funcrefs = get(g:, 'airline_statusline_funcrefs', [])$/;"	v

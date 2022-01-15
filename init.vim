@@ -2,6 +2,7 @@
 
 " set without plugin
 set encoding=UTF-8 " In case its not auto-enable
+set showmatch
 filetype plugin on " Enable plugin on file type
 :set number " Show number of line
 :set autoindent " Auto indent when needed like in c files
@@ -15,9 +16,10 @@ filetype plugin on " Enable plugin on file type
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch  " Disable highlight when finish searching
-:set list
-:let &listchars = 'tab:  ,eol:¬'
-:set fillchars=vert:│
+" To add symbol at every end of line
+" :set list
+" :let &listchars = 'tab:  ,eol:¬'
+" :set fillchars=vert:│
 autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 
 " Remap leader to space bar , '/' when no remap
@@ -54,6 +56,7 @@ Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 Plug 'https://github.com/ludovicchabant/vim-gutentags' " Automatically update tags files
 Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 
+
 call plug#end()
 
 "-------------------------  MAPPING AND SETTINGS FOR PLUGIN  -----------------"
@@ -75,11 +78,11 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Airline setup
 let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
-let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar
+" let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
 let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
-let g:airline_section_y = '🦕' " Disable encoding format in status bar
+let g:airline_section_y = '' " Disable encoding format in status bar
 " let g:airline#extensions#tabline#left_sep = ""
 " let g:airline#extensions#tabline#left_alt_sep = ""
 " let g:airline#extensions#tabline#right_sep = ""
