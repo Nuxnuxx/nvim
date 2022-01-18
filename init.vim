@@ -36,7 +36,6 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons for more beautiful style
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete + snippets
 Plug 'https://github.com/jiangmiao/auto-pairs' " a simple auto pairs
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'honza/vim-snippets' " Snippets for speeedd
 Plug 'skywind3000/asyncrun.vim' " to start quickfix
 Plug 'https://github.com/vim-airline/vim-airline' " To magnify the vim status bar
@@ -44,18 +43,19 @@ Plug 'vim-airline/vim-airline-themes' " To magnify even more the status bar
 Plug 'othree/yajs.vim' " Color and auto complete react...
 Plug 'nvim-lua/plenary.nvim' " For making telescope and harpoon working
 Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder eke file finder really fast
-Plug 'ThePrimeagen/harpoon' " To have a better view of tabs and save file to temp
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " To make telescope and live grep work
 Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one shortcut
 Plug 'tpope/vim-fugitive' " Git update in neovim
-Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
 Plug 'https://github.com/nanotech/jellybeans.vim' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
-Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
 Plug 'https://github.com/ludovicchabant/vim-gutentags' " Automatically update tags files
 Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 
+" Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+" Plug 'ThePrimeagen/harpoon' " To have a better view of tabs and save file to temp
+" Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
+" Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
 
 call plug#end()
 
@@ -206,7 +206,7 @@ au VimEnter * silent exec "!kill -s SIGWINCH $PPID"
 map L $
 map H ^
 
-" Make p (yank) replace a whole function
+" Make p (yank) more like other actions
 nnoremap paw "_dawP
 nnoremap pi{ "_di{P
 nnoremap piB "_di{P
