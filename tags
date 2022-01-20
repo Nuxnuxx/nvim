@@ -8,12 +8,14 @@
 ", function	plugged/telescope.nvim/lua/tests/automated/resolver_spec.lua	/^    it("should handle functions", function()$/;"	f
 "pool"	plugged/nvim-treesitter/queries/verilog/highlights.scm	/^(default_nettype_compiler_directive$/;"	f
 "slice"	plugged/nvim-treesitter/queries/python/locals.scm	/^(default_parameter$/;"	f
+#	init.vim	/^nnoremap # #zz$/;"	m
 $NODE_CLIENT_LOG_FILE	plugged/coc.nvim/autoload/coc/client.vim	/^    let $NODE_CLIENT_LOG_FILE = s:logfile$/;"	v
 $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CLIENT_LOG_LEVEL = 'debug'$/;"	v
 (sect2,	plugged/vim-airline/autoload/airline/themes.vim	/^    map(sect2, (_, v) => type(v) != type('') ? string(v) : v)$/;"	m
 ) end)	plugged/plenary.nvim/lua/plenary/async_lib/async.lua	/^    (callback or function() end)(select(2, ...))$/;"	f
 ) return #GetResults	plugged/telescope.nvim/lua/tests/automated/pickers/find_files_spec.lua	/^            { %s, function() return #GetResults() end },$/;"	f
 ) return Job.chain_status	plugged/plenary.nvim/scratch/term_open_checker.lua	/^  vim.wait(5000, function() return Job.chain_status(1) end)$/;"	f
+*	init.vim	/^nnoremap * *zz$/;"	m
 ,	init.vim	/^inoremap , ,<c-g>u$/;"	m
 , function	plugged/telescope.nvim/lua/tests/automated/telescope_spec.lua	/^      it("should allow for passing in a function", function()$/;"	f
 ,,x	plugged/plenary.nvim/scratch/minimal_init.vim	/^nnoremap ,,x :luafile %<CR>$/;"	m
@@ -30,6 +32,7 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <C-d>	init.vim	/^nnoremap <C-d> :MaximizerToggle!<CR>$/;"	m
 <C-e>	init.vim	/^nnoremap <C-e> :NERDTreeFind<CR>$/;"	m
 <C-f>	init.vim	/^nnoremap <C-f> :cp<CR>$/;"	m
+<C-h>	init.vim	/^nnoremap <C-h> :winc h<CR>$/;"	m
 <C-j>	init.vim	/^nnoremap <C-j> :winc j<CR>$/;"	m
 <C-k>	init.vim	/^nnoremap <C-k> :winc k<CR>$/;"	m
 <C-l>	init.vim	/^nnoremap <C-l> :winc l<CR>$/;"	m
@@ -161,17 +164,14 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <Up>	init.vim	/^nnoremap <Up> <Nop>$/;"	m
 <Up>	init.vim	/^vnoremap <Up> <Nop>$/;"	m
 <leader>#	init.vim	/^noremap <silent> <leader># :AsyncRun mcs -out:$(VIM_FILEDIR)\/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>$/;"	m
-<leader><Down>:Telescope	init.vim	/^nnoremap <leader><Down>:Telescope live_grep<CR>$/;"	m
 <leader><F5>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F5> <Plug>VimspectorLaunch$/;"	m
 <leader><F8>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F8> <Plug>VimspectorRunToCursor$/;"	m
 <leader><F9>	plugged/vimspector/plugin/vimspector.vim	/^  nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint$/;"	m
-<leader><Up>	init.vim	/^nnoremap <leader><Up> :Telescope help_tags<CR>$/;"	m
-<leader>C	init.vim	/^noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>$/;"	m
+<leader>C	init.vim	/^noremap <silent> <leader>C :AsyncRun g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)"  -fsanitize=address <cr>$/;"	m
 <leader>H	init.vim	/^nnoremap <leader>H :tabprevious<CR>$/;"	m
 <leader>L	init.vim	/^nnoremap <leader>L :tabnext<CR>$/;"	m
-<leader>a	init.vim	/^nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>$/;"	m
 <leader>b	init.vim	/^nnoremap <leader>b :Telescope buffers<CR>$/;"	m
-<leader>c	init.vim	/^noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" -fsanitize=address -static-libasan<cr>$/;"	m
+<leader>c	init.vim	/^noremap <silent> <leader>c :AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" -fsanitize=address <cr>$/;"	m
 <leader>cd2	plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        map <unique> <leader>cd2 <Plug>XTablineCdDown2$/;"	m
 <leader>cd3	plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        map <unique> <leader>cd3 <Plug>XTablineCdDown3$/;"	m
 <leader>cdc	plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^        map <unique> <leader>cdc <Plug>XTablineCdCurrent$/;"	m
@@ -192,15 +192,13 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <leader>gs	init.vim	/^nmap <leader>gs :G<CR>$/;"	m
 <leader>h	init.vim	/^nnoremap <leader>h :bp<CR>$/;"	m
 <leader>j	init.vim	/^noremap <silent> <leader>j :AsyncRun javac $(VIM_FILEPATH)<cr>$/;"	m
-<leader>ko	init.vim	/^nnoremap <leader>ko :call OpenTerminal()<CR>$/;"	m
 <leader>l	init.vim	/^nnoremap <leader>l :bn<CR>$/;"	m
 <leader>mo	init.vim	/^noremap <silent> <leader>mo :call Mouse()<CR>$/;"	m
 <leader>p	init.vim	/^nnoremap <leader>p :Telescope find_files<CR>$/;"	m
 <leader>rc	init.vim	/^nnoremap <silent> <leader>rc :e $MYVIMRC<cr>$/;"	m
 <leader>se	init.vim	/^noremap <silent> <leader>se :call Unmouse()<CR>$/;"	m
-<leader>t	init.vim	/^nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>$/;"	m
-<leader>wC	init.vim	/^noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>$/;"	m
-<leader>wc	init.vim	/^noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" -lm  -fsanitize=address -static-libasan<cr>$/;"	m
+<leader>wC	init.vim	/^noremap <silent> <leader>wC :AsyncRun g++ -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)"  -fsanitize=address <cr>$/;"	m
+<leader>wc	init.vim	/^noremap <silent> <leader>wc :AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" -lm  -fsanitize=address <cr>$/;"	m
 <leader>x	init.vim	/^nnoremap <leader>x :bd<CR>$/;"	m
 <leader>z	init.vim	/^nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>$/;"	m
 <leader>†	plugged/vimspector/compiler/vimspector_test.vim	/^  nnoremap <buffer> <leader>† :call <SID>RunTestUnderCursorInVimspector()<CR>$/;"	m
@@ -1413,7 +1411,6 @@ OpenConfig	plugged/coc.nvim/plugin/coc.vim	/^function! s:OpenConfig()$/;"	f
 OpenDiagnostics	plugged/coc.nvim/plugin/coc.vim	/^function! s:OpenDiagnostics(...) abort$/;"	f
 OpenFileInCurrentWindow	plugged/vimspector/python3/vimspector/utils.py	/^def OpenFileInCurrentWindow( file_name ):$/;"	f
 OpenParse	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:OpenParse(string, wants_cmd) abort$/;"	f
-OpenTerminal	init.vim	/^function! OpenTerminal()$/;"	f
 Opener.New	plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener.New(path, opts)$/;"	f
 Opener._bufInWindows	plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener._bufInWindows(bnum)$/;"	f
 Opener._checkToCloseTree	plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener._checkToCloseTree(newtab)$/;"	f

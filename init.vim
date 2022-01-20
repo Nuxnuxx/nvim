@@ -113,10 +113,6 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : <Tab>""
 " Telescope and harpoon setup
 nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
-nnoremap <leader><Down>:Telescope live_grep<CR>
-nnoremap <leader><Up> :Telescope help_tags<CR>
-nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
-nnoremap <leader>t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 
 " To navigate trought quickfix list
 nnoremap <C-c> :cn<CR>
@@ -139,7 +135,9 @@ nnoremap c# #``cgN
 
 " To maximize windows and demaximize
 nnoremap <C-d> :MaximizerToggle!<CR>
-" To simplify switching windows nnoremap <C-h> :winc h<CR>
+
+" To simplify switching windows nnoremap
+nnoremap <C-h> :winc h<CR>
 nnoremap <C-j> :winc j<CR>
 nnoremap <C-k> :winc k<CR>
 nnoremap <C-l> :winc l<CR>
@@ -149,6 +147,8 @@ nnoremap Y y$
 nnoremap n nzzzn
 nnoremap N Nzzzv
 nnoremap J mzJ`z
+nnoremap * *zz
+nnoremap # #zz
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
@@ -159,18 +159,6 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gk :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
-" Terminal command
-function! OpenTerminal()
-	vsplit
-	vertical resize 60
-	winc l
-	term
-	set nonu
-	set norelativenumber
-	startinsert
-endfunction
-tnoremap <Esc><Esc> <C-\><C-n>
-nnoremap <leader>ko :call OpenTerminal()<CR>
 
 " To make mouse usable or not
 function Mouse()
@@ -185,13 +173,13 @@ noremap <silent> <leader>se :call Unmouse()<CR>
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
 " Compile in c
-noremap <silent> <leader>c :AsyncRun gcc -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address -static-libasan<cr>
+noremap <silent> <leader>c :AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address <cr>
 " Compile in c without warning
-noremap <silent> <leader>wc :AsyncRun gcc -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm  -fsanitize=address -static-libasan<cr>
+noremap <silent> <leader>wc :AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm  -fsanitize=address <cr>
 " Compile in c++
-noremap <silent> <leader>C :AsyncRun g++ -Wall -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>
+noremap <silent> <leader>C :AsyncRun g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address <cr>
 " Compile in c++ without warning
-noremap <silent> <leader>wC :AsyncRun g++ -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address -static-libasan<cr>
+noremap <silent> <leader>wC :AsyncRun g++ -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address <cr>
 " Compile in c#
 noremap <silent> <leader># :AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>
 " Compile in java
