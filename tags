@@ -36,7 +36,6 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <C-j>	init.vim	/^nnoremap <C-j> :winc j<CR>$/;"	m
 <C-k>	init.vim	/^nnoremap <C-k> :winc k<CR>$/;"	m
 <C-l>	init.vim	/^nnoremap <C-l> :winc l<CR>$/;"	m
-<C-t>	init.vim	/^nnoremap <C-t> :NERDTreeToggle<CR>$/;"	m
 <Down>	init.vim	/^inoremap <Down> <Nop>$/;"	m
 <Down>	init.vim	/^nnoremap <Down> <Nop>$/;"	m
 <Down>	init.vim	/^vnoremap <Down> <Nop>$/;"	m
@@ -193,10 +192,12 @@ $NODE_CLIENT_LOG_LEVEL	plugged/coc.nvim/autoload/coc/client.vim	/^  let $NODE_CL
 <leader>h	init.vim	/^nnoremap <leader>h :bp<CR>$/;"	m
 <leader>j	init.vim	/^noremap <silent> <leader>j :AsyncRun javac $(VIM_FILEPATH)<cr>$/;"	m
 <leader>l	init.vim	/^nnoremap <leader>l :bn<CR>$/;"	m
+<leader>ma	init.vim	/^nnoremap <leader>ma :make<cr><cr>$/;"	m
 <leader>mo	init.vim	/^noremap <silent> <leader>mo :call Mouse()<CR>$/;"	m
 <leader>p	init.vim	/^nnoremap <leader>p :Telescope find_files<CR>$/;"	m
 <leader>rc	init.vim	/^nnoremap <silent> <leader>rc :e $MYVIMRC<cr>$/;"	m
 <leader>se	init.vim	/^noremap <silent> <leader>se :call Unmouse()<CR>$/;"	m
+<leader>t	init.vim	/^nnoremap <leader>t :NERDTreeToggle<CR>$/;"	m
 <leader>wC	init.vim	/^noremap <silent> <leader>wC :AsyncRun g++ -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)"  -fsanitize=address <cr>$/;"	m
 <leader>wc	init.vim	/^noremap <silent> <leader>wc :AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)\/$(VIM_FILENOEXT)" -lm  -fsanitize=address <cr>$/;"	m
 <leader>x	init.vim	/^nnoremap <leader>x :bd<CR>$/;"	m
@@ -6469,13 +6470,15 @@ g:airline_left_sep	init.vim	/^let g:airline_left_sep = ""$/;"	v
 g:airline_right_sep	init.vim	/^let g:airline_right_sep = ""$/;"	v
 g:airline_section_	plugged/vim-airline/t/init.vim	/^      let g:airline_section_{s} = s$/;"	v
 g:airline_section_a	plugged/vim-airline/t/airline.vim	/^    let g:airline_section_a = airline#section#create(['mode', 'mode'])$/;"	v
-g:airline_section_y	init.vim	/^let g:airline_section_y = '' " Disable encoding format in status bar$/;"	v
+g:airline_section_y	init.vim	/^let g:airline_section_y = 'ඞ' " Disable encoding format in status bar$/;"	v
 g:airline_section_z	init.vim	/^let g:airline_section_z = airline#section#create(["\\uE0A1" . '%{line(".")}' . "\\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter$/;"	v
 g:airline_section_z	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_section_z = airline#section#create(['%1p%% — ',$/;"	v
 g:airline_statusline_funcrefs	plugged/vim-airline/autoload/airline.vim	/^let g:airline_statusline_funcrefs = get(g:, 'airline_statusline_funcrefs', [])$/;"	v
 g:airline_statusline_funcrefs	plugged/vim-airline/t/airline.vim	/^    let g:airline_statusline_funcrefs = []$/;"	v
 g:airline_statusline_ontop	plugged/vim-airline/t/util.vim	/^    let g:airline_statusline_ontop = 0$/;"	v
 g:airline_statusline_ontop	plugged/vim-airline/t/util.vim	/^    let g:airline_statusline_ontop = 1$/;"	v
+g:airline_symbols	init.vim	/^let g:airline_symbols.branch = ''$/;"	v
+g:airline_symbols	init.vim	/^let g:airline_symbols.dirty=' ඞ'$/;"	v
 g:airline_symbols	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_symbols.paste = 'P'$/;"	v
 g:airline_symbols	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_symbols.spell = 'S'$/;"	v
 g:airline_theme	init.vim	/^let g:airline_theme='jellybeans' " Make status bar and buffer bar in theme with gruvbox$/;"	v

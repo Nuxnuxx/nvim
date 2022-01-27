@@ -16,11 +16,12 @@ filetype plugin on " Enable plugin on file type
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch  " Disable highlight when finish searching
-" To add symbol at every end of line
 " :set list
+" " To add symbol at every end of line
 " :let &listchars = 'tab:  ,eol:¬'
 " :set fillchars=vert:│
 autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
+set autowrite " auto write when leave a buffer
 
 " Remap leader to space bar , '/' when no remap
 :let mapleader = "\<Space>"
@@ -63,6 +64,7 @@ call plug#end()
 
 " To get acces to this file
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
+nnoremap <leader>ma :make<cr><cr>
 
 " For style / color / status bar / background / Nerd tree beauty
 let g:jellybeans_background_color_256='232'
@@ -74,7 +76,7 @@ let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this 
 
 " nerd tree setup
 nnoremap <C-e> :NERDTreeFind<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " Airline setup
 let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
@@ -82,7 +84,9 @@ let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
 let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
-let g:airline_section_y = '' " Disable encoding format in status bar
+let g:airline_section_y = 'ඞ' " Disable encoding format in status bar
+let g:airline_symbols.dirty=' ඞ'
+let g:airline_symbols.branch = ''
 " let g:airline#extensions#tabline#left_sep = ""
 " let g:airline#extensions#tabline#left_alt_sep = ""
 " let g:airline#extensions#tabline#right_sep = ""
