@@ -6467,6 +6467,7 @@ g:airline_inactive_collapse	plugged/vim-airline/t/airline.vim	/^    let g:airlin
 g:airline_inactive_collapse	plugged/vim-airline/t/airline.vim	/^    let g:airline_inactive_collapse = 1$/;"	v
 g:airline_inactive_funcrefs	plugged/vim-airline/autoload/airline.vim	/^let g:airline_inactive_funcrefs = get(g:, 'airline_inactive_statusline_funcrefs', [])$/;"	v
 g:airline_left_sep	init.vim	/^let g:airline_left_sep = ""$/;"	v
+g:airline_powerline_fonts	init.vim	/^let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar$/;"	v
 g:airline_right_sep	init.vim	/^let g:airline_right_sep = ""$/;"	v
 g:airline_section_	plugged/vim-airline/t/init.vim	/^      let g:airline_section_{s} = s$/;"	v
 g:airline_section_a	plugged/vim-airline/t/airline.vim	/^    let g:airline_section_a = airline#section#create(['mode', 'mode'])$/;"	v
@@ -6477,7 +6478,6 @@ g:airline_statusline_funcrefs	plugged/vim-airline/autoload/airline.vim	/^let g:a
 g:airline_statusline_funcrefs	plugged/vim-airline/t/airline.vim	/^    let g:airline_statusline_funcrefs = []$/;"	v
 g:airline_statusline_ontop	plugged/vim-airline/t/util.vim	/^    let g:airline_statusline_ontop = 0$/;"	v
 g:airline_statusline_ontop	plugged/vim-airline/t/util.vim	/^    let g:airline_statusline_ontop = 1$/;"	v
-g:airline_symbols	init.vim	/^let g:airline_symbols.branch = ''$/;"	v
 g:airline_symbols	init.vim	/^let g:airline_symbols.dirty=' ඞ'$/;"	v
 g:airline_symbols	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_symbols.paste = 'P'$/;"	v
 g:airline_symbols	plugged/vim-airline-themes/autoload/airline/themes/lighthaus.vim	/^let g:airline_symbols.spell = 'S'$/;"	v

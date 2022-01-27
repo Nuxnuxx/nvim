@@ -64,6 +64,8 @@ call plug#end()
 
 " To get acces to this file
 nnoremap <silent> <leader>rc :e $MYVIMRC<cr>
+
+" To make a project 'need to be in the directory to use'
 nnoremap <leader>ma :make<cr><cr>
 
 " For style / color / status bar / background / Nerd tree beauty
@@ -80,13 +82,12 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 
 " Airline setup
 let g:airline#extensions#tabline#enabled = 1 " Show tab and buffer bar
-" let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar
+let g:airline_powerline_fonts = 1 " Enable icons and symbols in bar
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show number of buffer and tab for speed
 let g:airline#extensions#whitespace#enabled = 0 " For beauty just disable unuse space
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}']) " Redesign of the bar for more minimalist line and column counter
 let g:airline_section_y = 'ඞ' " Disable encoding format in status bar
 let g:airline_symbols.dirty=' ඞ'
-let g:airline_symbols.branch = ''
 " let g:airline#extensions#tabline#left_sep = ""
 " let g:airline#extensions#tabline#left_alt_sep = ""
 " let g:airline#extensions#tabline#right_sep = ""
