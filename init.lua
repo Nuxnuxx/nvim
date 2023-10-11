@@ -102,29 +102,30 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'rose-pine/neovim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
-      require('onedark').setup {
-        style= 'darker'
-      }
+require('rose-pine').setup({
+        disable_background = 'true',
+        disable_float_background = 'true'
+    })
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  -- {
+  --   -- Set lualine as statusline
+  --   'nvim-lualine/lualine.nvim',
+  --   -- See `:help lualine.txt`
+  --   opts = {
+  --     options = {
+  --       icons_enabled = false,
+  --       theme = 'none',
+  --       component_separators = '|',
+  --       section_separators = '',
+  --     },
+  --   },
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
