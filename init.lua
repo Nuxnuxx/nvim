@@ -181,12 +181,14 @@ require('rose-pine').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- disable swap file
 vim.o.swapfile = false
 
 -- Make line numbers default
 vim.o.relativenumber = true
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#45b6fe'} )
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -232,6 +234,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- map key for confort
 vim.keymap.set('n', 'L', "$")
 vim.keymap.set('n', 'H', "^")
+vim.keymap.set('v', 'L', "$")
+vim.keymap.set('v', 'H', "^")
 vim.keymap.set('n', '<space>x', ":x<CR>")
 vim.keymap.set('n', '<space>l', ":bn<CR>")
 vim.keymap.set('n', '<space>h', ":bp<CR>")
