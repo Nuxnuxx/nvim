@@ -340,7 +340,6 @@ local servers = {
   dockerls = {},
   svelte = {},
   cssls = { filetypes = { "css", "scss", "less" } },
-  java_language_server = {},
 
   lua_ls = {
     Lua = {
