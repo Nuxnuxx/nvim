@@ -205,13 +205,22 @@ vim.keymap.set('n', '<leader>b', function()
   require('harpoon.mark').add_file()
 end, { desc = 'add harpoon files' });
 
-vim.keymap.set('n', '<leader>H', function()
-  require('harpoon.ui').nav_next()
-end, { desc = 'add harpoon files' });
+vim.keymap.set('n', '<leader>1', function()
+  require('harpoon.mark').nav_file(1)
+end, { desc = 'go to file 1' });
 
-vim.keymap.set('n', '<leader>L', function()
-  require('harpoon.ui').nav_prev()
-end, { desc = 'add harpoon files' });
+vim.keymap.set('n', '<leader>2', function()
+  require('harpoon.mark').nav_file(2)
+end, { desc = 'go to file 2' });
+
+vim.keymap.set('n', '<leader>3', function()
+  require('harpoon.mark').nav_file(3)
+end, { desc = 'go to file 3' });
+
+vim.keymap.set('n', '<leader>4', function()
+  require('harpoon.mark').nav_file(4)
+end, { desc = 'go to file 4' });
+
 
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>/', function()
