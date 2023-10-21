@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'ThePrimeagen/harpoon',
+
 
   {
     'neovim/nvim-lspconfig',
@@ -80,12 +82,6 @@ require('lazy').setup({
       })
       vim.cmd.colorscheme 'rose-pine'
     end,
-  },
-
-  {
-    'ThePrimeagen/harpoon',
-    require('harpoon').setup({
-    })
   },
 
 
@@ -195,6 +191,9 @@ require('telescope').setup {
 }
 
 pcall(require('telescope').load_extension, 'fzf')
+
+require('harpoon').setup {
+}
 
 
 vim.keymap.set('n', '<leader><space>', function()
