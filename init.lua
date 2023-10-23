@@ -192,8 +192,8 @@ require('telescope').setup {
 
 pcall(require('telescope').load_extension, 'fzf')
 
-require('harpoon').setup {
-}
+require('harpoon').setup ({
+})
 
 
 vim.keymap.set('n', '<leader><space>', function()
@@ -205,19 +205,19 @@ vim.keymap.set('n', '<leader>b', function()
 end, { desc = 'add harpoon files' });
 
 vim.keymap.set('n', '<leader>1', function()
-  require('harpoon.mark').nav_file(1)
+  require('harpoon.ui').nav_file(1)
 end, { desc = 'go to file 1' });
 
 vim.keymap.set('n', '<leader>2', function()
-  require('harpoon.mark').nav_file(2)
+  require('harpoon.ui').nav_file(2)
 end, { desc = 'go to file 2' });
 
 vim.keymap.set('n', '<leader>3', function()
-  require('harpoon.mark').nav_file(3)
+  require('harpoon.ui').nav_file(3)
 end, { desc = 'go to file 3' });
 
 vim.keymap.set('n', '<leader>4', function()
-  require('harpoon.mark').nav_file(4)
+  require('harpoon.ui').nav_file(4)
 end, { desc = 'go to file 4' });
 
 
