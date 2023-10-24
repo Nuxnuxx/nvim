@@ -196,6 +196,10 @@ require('harpoon').setup ({
 })
 
 
+vim.keymap.set('n', '<leader>ce', function()
+	require('copilot.suggestion').toggle_auto_trigger()
+end, { desc = 'enable suggestion' });
+
 vim.keymap.set('n', '<leader><space>', function()
   require('harpoon.ui').toggle_quick_menu()
 end, { desc = 'Find harpoon files' });
