@@ -7,7 +7,7 @@ return {
 			suggestion = {
 				auto_trigger = false,
 				keymap = {
-					accept = "<space>cd"
+					accept = "<C-e>"
 				}
 			}
 		})
