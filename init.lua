@@ -342,6 +342,7 @@ local servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   dockerls = {},
+	jdtls = {},
   svelte = {},
   cssls = { filetypes = { "css", "scss", "less" } },
 
