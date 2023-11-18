@@ -13,6 +13,7 @@ return {
       debug = false,
       sources = {
         formatting.prettier,
+				formatting.csharpier
       },
     }
 

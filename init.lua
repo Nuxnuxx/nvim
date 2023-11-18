@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.netrw_banner = 0
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -342,6 +343,9 @@ local servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   dockerls = {},
+	gopls = {},
+	csharp_ls = {},
+	-- sqls = {},
 	jdtls = {},
   svelte = {},
   cssls = { filetypes = { "css", "scss", "less" } },
