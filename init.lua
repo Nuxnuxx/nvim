@@ -179,12 +179,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	pattern = '*',
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	callback = function()
-		require('lint').try_lint()
-	end
-})
-
 require('telescope').setup {
 	defaults = {
 		mappings = {
@@ -355,6 +349,9 @@ local servers = {
 	},
 	html = { filetypes = { 'html', 'twig', 'hbs' } },
 	dockerls = {},
+	clangd = {},
+	asm_lsp = {},
+	rust_analyzer = {},
 	gopls = {},
 	csharp_ls = {},
 	-- sqls = {},
