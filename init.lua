@@ -226,7 +226,7 @@ end, { desc = 'go to file 4' });
 
 vim.keymap.set('n', '<leader>5', function()
 	require('harpoon.ui').nav_file(5)
-end, { desc = 'go to file 4' });
+end, { desc = 'go to file 5' });
 
 
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
