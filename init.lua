@@ -20,6 +20,21 @@ require('lazy').setup({
 	'tpope/vim-rhubarb',
 	'ThePrimeagen/harpoon',
 
+	{
+		"olexsmir/gopher.nvim",
+		requires = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
+
+	{
+			"iamcco/markdown-preview.nvim",
+			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+			ft = { "markdown" },
+			build = function() vim.fn["mkdp#util#install"]() end,
+	},
+
 
 	{
 		'neovim/nvim-lspconfig',
@@ -195,6 +210,13 @@ pcall(require('telescope').load_extension, 'fzf')
 require('harpoon').setup({
 })
 
+vim.keymap.set('n', '<leader>i', function()
+	vim.cmd(':GoIfErr')
+end, { desc = 'goiferr'}
+)
+
+vim.keymap.set('n', ']d',function() require("trouble").next({skip_groups = true, jump = true}) end, { desc = "go to next trouble"})
+vim.keymap.set('n', '[d',function() require("trouble").previous({skip_groups = true, jump = true}) end, { desc = "go to next trouble"})
 
 vim.keymap.set('n', '<leader>ce', function()
 	require('copilot.suggestion').toggle_auto_trigger()
@@ -239,6 +261,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>ss', function() vim.cmd(':Telescope lsp_workspace_symbols query=S') end, { desc = '[S]earch [S]Symbol' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -246,9 +269,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>st', function() vim.cmd(':TodoTelescope') end, { desc = '[S]earch [R]esume' })
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>q', function() require("trouble").toggle() end, { desc = 'Open diagnostics list' })
 
 require('nvim-treesitter.configs').setup {
 	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
@@ -338,6 +359,8 @@ local on_attach = function(_, bufnr)
 	nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 end
 
+vim.cmd("autocmd! BufNewFile,BufRead *.templ set filetype=templ")
+
 local servers = {
 	pyright = {},
 	emmet_ls = { filetypes = { 'html' }, single_file_support = true },
@@ -347,14 +370,17 @@ local servers = {
 			disableSuggestions = true,
 		}
 	},
-	html = { filetypes = { 'html', 'twig', 'hbs' } },
+	html = { filetypes = { 'html', 'twig', 'hbs', 'templ' } },
 	dockerls = {},
+	tailwindcss = {},
+	templ = {},
+	htmx = {},
 	clangd = {},
 	asm_lsp = {},
 	rust_analyzer = {},
 	gopls = {},
 	csharp_ls = {},
-	-- sqls = {},
+	sqls = {},
 	jdtls = {},
 	svelte = {},
 	cssls = { filetypes = { "css", "scss", "less" } },
