@@ -128,6 +128,20 @@ require('lazy').setup({
 	{ import = 'custom.plugins' },
 }, {})
 
+require('llm').setup({
+    timeout_ms = 10000,
+    services = {
+        anthropic = {
+            url = "https://api.anthropic.com/v1/messages",
+            model = "claude-3-7-sonnet-20250219",
+            api_key_name = vim.env.ANTHROPIC_KEY,
+        },
+    }
+})
+
+vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "anthropic" }) end, { desc = "Prompt with anthropic" })
+vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "anthropic" }) end, { desc = "Prompt while replacing with anthropic" })
+
 vim.o.tabstop = 2;
 vim.o.shiftwidth = 2;
 
@@ -159,10 +173,12 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.o.termguicolors = true
 
+
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 
 vim.keymap.set('n', 'L', "$")
 vim.keymap.set('n', 'H', "^")
@@ -269,7 +285,10 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>st', function() vim.cmd(':TodoTelescope') end, { desc = '[S]earch [R]esume' })
 
-vim.keymap.set('n', '<leader>q', function() require("trouble").toggle() end, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>q', function()
+  vim.diagnostic.setloclist()
+  vim.cmd('lopen')
+end, { desc = 'Open diagnostics list' })
 
 require('nvim-treesitter.configs').setup {
 	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
@@ -365,18 +384,13 @@ local servers = {
 	pyright = {},
 	emmet_ls = { filetypes = { 'html' }, single_file_support = true },
 	marksman = { filetypes = { 'markdown' }, single_file_support = true },
-	tsserver = {
-		init_options = {
-			disableSuggestions = true,
-		}
-	},
 	html = { filetypes = { 'html', 'twig', 'hbs', 'templ' } },
 	dockerls = {},
 	tailwindcss = {},
 	templ = {},
-	htmx = {},
 	clangd = {},
 	asm_lsp = {},
+	phpactor = {},
 	rust_analyzer = {},
 	gopls = {},
 	csharp_ls = {},
