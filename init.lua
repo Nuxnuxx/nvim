@@ -29,19 +29,11 @@ require('lazy').setup({
 	},
 
 	{
-			"iamcco/markdown-preview.nvim",
-			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-			ft = { "markdown" },
-			build = function() vim.fn["mkdp#util#install"]() end,
-	},
-
-
-	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
 			{ 'williamboman/mason.nvim', config = true }, 'williamboman/mason-lspconfig.nvim',
 
-			{ 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+			{ 'j-hui/fidget.nvim',opts = {} },
 
 			'folke/neodev.nvim',
 		},
@@ -134,13 +126,13 @@ require('llm').setup({
         anthropic = {
             url = "https://api.anthropic.com/v1/messages",
             model = "claude-3-7-sonnet-20250219",
-            api_key_name = vim.env.ANTHROPIC_KEY,
+            api_key_name = "ANTHROPIC_API_KEY",
         },
     }
 })
 
-vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "anthropic" }) end, { desc = "Prompt with anthropic" })
-vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "anthropic" }) end, { desc = "Prompt while replacing with anthropic" })
+vim.keymap.set("n", "g,", function() require("llm").prompt({ replace = false, service = "anthropic" }) end, { desc = "Prompt with anthropic" })
+vim.keymap.set("v", "g.", function() require("llm").prompt({ replace = true, service = "anthropic" }) end, { desc = "Prompt while replacing with anthropic" })
 
 vim.o.tabstop = 2;
 vim.o.shiftwidth = 2;
@@ -204,7 +196,7 @@ vim.keymap.set('n', '<leader>wl', '<C-w>l', { desc = 'Go to right window' })
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
 	callback = function()
-		vim.highlight.on_yank()
+		vim.hl.on_yank()
 	end,
 	group = highlight_group,
 	pattern = '*',
@@ -390,7 +382,6 @@ local servers = {
 	templ = {},
 	clangd = {},
 	asm_lsp = {},
-	phpactor = {},
 	rust_analyzer = {},
 	gopls = {},
 	csharp_ls = {},
@@ -411,28 +402,40 @@ require('neodev').setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local mason_lspconfig = require 'mason-lspconfig'
+local ok_lsp, lspconfig = pcall(require, "lspconfig")
+if not ok_lsp then
+  vim.notify("lspconfig not found!", vim.log.levels.ERROR)
+  return
+end
 
-mason_lspconfig.setup {
-	ensure_installed = vim.tbl_keys(servers),
-}
+local ok_mason, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not ok_mason then
+  vim.notify("mason-lspconfig not found!", vim.log.levels.ERROR)
+  return
+end
 
-mason_lspconfig.setup_handlers {
-	function(server_name)
-		require('lspconfig')[server_name].setup {
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = servers[server_name],
-			filetypes = (servers[server_name] or {}).filetypes,
-			single_file_support = (servers[server_name] or {}).single_file_support,
-			init_options = (servers[server_name] or {}).init_options
-		}
-	end
-}
+-- Ensure servers are installed
+mason_lspconfig.setup({
+  ensure_installed = vim.tbl_keys(servers),
+  -- automatic_enable = true is default
+})
+
+-- Configure each server using the new vim.lsp.config API
+for server_name, server_opts in pairs(servers) do
+    vim.lsp.config(server_name, vim.tbl_extend("force", {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = server_opts,
+      filetypes = server_opts.filetypes,
+      single_file_support = server_opts.single_file_support,
+      init_options = server_opts.init_options,
+    }, {}))
+end
 
 local cmp = require 'cmp'
+
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+require("luasnip").setup {}
 luasnip.config.setup {}
 
 cmp.setup {
